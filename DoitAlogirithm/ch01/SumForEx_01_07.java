@@ -10,12 +10,12 @@ public class SumForEx_01_07 {
 
 		System.out.println("1부터 n까지의 합을 구합니다.");
 		System.out.print("n의 값 : ");
-		int num = stdIn.nextInt();
+		int n = stdIn.nextInt();
 		
 		int sum = 0;
 		
-		for(int i=1; i<=num; i++) {
-			System.out.print(i==num ? i : i+" + ");		//마지막 값은 +없이 출력
+		for(int i=1; i<=n; i++) {
+			System.out.print(i==n ? i : i+" + ");		//마지막 값은 +없이 출력
 			sum += i;
 		}
 		System.out.print(" = " + sum);

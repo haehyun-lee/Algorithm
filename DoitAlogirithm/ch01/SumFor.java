@@ -9,15 +9,15 @@ public class SumFor {
 		
 		System.out.println("1부터 n까지의 합을 구합니다.");
 		System.out.print("n의 값 : ");
-		int num = stdIn.nextInt();
+		int n = stdIn.nextInt();
 		
 		int sum = 0;
 		
 		//i초기값 및 for 범위 주의 (미만, 이하, 이상, 초과) 
-		for(int i=1; i<=num; i++) {
+		for(int i=1; i<=n; i++) {
 			sum += i;
 		}
 		
-		System.out.printf("1부터 %d까지의 합은 %d입니다.", num, sum);
+		System.out.printf("1부터 %d까지의 합은 %d입니다.", n, sum);
 	}
 }
