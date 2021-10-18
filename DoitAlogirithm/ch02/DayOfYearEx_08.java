@@ -2,7 +2,7 @@ package ch02;
 
 import java.util.Scanner;
 
-public class DayOfYearPercent {
+public class DayOfYearEx_08 {
 	static int[][] mdays = {
 			{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},	//평년
 			{ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}	//윤년
@@ -15,28 +15,11 @@ public class DayOfYearPercent {
 	
 	//서기 y년 m월 d일의 그 해 경과 일 수를 구함
 	static int dayOfYear(int y, int m, int d) {
-		int days = d;
-		
-		for(int i=1; i<m; i++) {
-			days += mdays[isLeap(y)][i-1];
+		while(--m > 0) {
+			d += mdays[isLeap(y)][m-1]; 
 		}
 		
-		return days;
-	}
-	
-	//해당 년월일의 경과 일수를 퍼센트로 표시
-	static void printPercent(int y, int m, int d) {
-		float totalDays = (isLeap(y) == 1) ? 365f : 366f;
-		
-		for(int i=0; i<m; i++) {
-			System.out.print("■");
-		}
-		for(int i=0; i<12-m; i++) {
-			System.out.print("□");
-		}
-		
-		int percent = (int)((dayOfYear(y, m, d) / totalDays) * 100);
-		System.out.println(" " + percent + "%");
+		return d;
 	}
 	
 	public static void main(String[] args) {
@@ -53,7 +36,7 @@ public class DayOfYearPercent {
 			System.out.print("일 : ");
 			int day = stdIn.nextInt();
 			
-			printPercent(year, month, day);
+			System.out.printf("그 해 %d일째입니다.\n", dayOfYear(year, month, day));
 			
 			System.out.println("한번 더 할까요? (1. 예, 2. 아니오) : ");
 			retry = stdIn.nextInt();

@@ -10,7 +10,7 @@ public class DayOfYear {
 	
 	//윤년(1), 평년(0) 체크
 	static int isLeap(int year) {
-		return (year % 4 == 0 && year % 100 != 0 && year % 400 == 0) ? 1 : 0;
+		return (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) ? 1 : 0;
 	}
 	
 	//서기 y년 m월 d일의 그 해 경과 일 수를 구함
