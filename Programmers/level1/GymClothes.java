@@ -16,7 +16,7 @@ public class GymClothes {
 		Arrays.sort(lost);
 		Arrays.sort(reserve);
 
-		//여벌 체육복을 가져온 학생이 도난당한 경우 본인 것만 사용
+		//여벌 체육복을 가져온 학생이 도난당한 경우 본인 것 사용
 		for(int i=0; i<lost.length; i++) {
 			for(int j=0; j<reserve.length; j++) {
 				if(lost[i] == reserve[j]) {
@@ -29,7 +29,7 @@ public class GymClothes {
 			}
 		}
 		
-		//여벌 체육복을 도난당한 학생에게 빌려주는 경우
+		//체육복을 도난당한 학생에게 여벌 체육복을 빌려줌
 		for(int i=0; i<lost.length; i++) {
 			for(int j=0; j<reserve.length; j++) {
 				if(lost[i] == reserve[j]-1 || lost[i] == reserve[j]+1) {
