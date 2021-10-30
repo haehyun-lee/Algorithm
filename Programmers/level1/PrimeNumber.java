@@ -1,5 +1,7 @@
 package level1;
 
+import java.util.ArrayList;
+
 //소수 찾기
 public class PrimeNumber {
 	public int solution1(int n) {
@@ -70,5 +72,37 @@ public class PrimeNumber {
         }
         
         return answer;
+	}
+	
+	//에라토스테네스의 체
+	public int Eratos(int n) {
+		int cnt = 0;
+		ArrayList<Boolean> primeList = new ArrayList<Boolean>(n+1);
+		
+		//0번째와 1번째는 소수 아님
+		primeList.add(false);		
+		primeList.add(false);
+		
+		//2~n까지 소수로 설정
+		for(int i=2; i<=n; i++) {
+			primeList.add(i, true);
+		}
+		
+		//2부터 n의 제곱근보다 작을 때까지, 각각의 배수들을 지운다.
+		for(int i=2; (i*i) <= n; i++) {
+			if(primeList.get(i)) {
+				for(int j = i*i; j <= n; j += i) {	//i*i 미만은 이미 이전 i의 반복에서 처리되었으므로 j의 시작값은 i*i로 최적화 가능
+					primeList.set(j, false);		//i의 배수는 소수 아님
+				}
+			}
+		}
+		
+		for(int i=0; i<=n; i++) {
+			if(primeList.get(i) == true) {
+				cnt++;
+			}
+		}
+		
+		return cnt;
 	}
 }

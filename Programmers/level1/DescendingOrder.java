@@ -30,6 +30,6 @@ public class DescendingOrder {
             }
         }
         
-        return new String(chArr);
+        return Long.parseLong(new String(chArr));
 	}
 }
