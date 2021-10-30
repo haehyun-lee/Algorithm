@@ -11,6 +11,7 @@ public class ControlString {
         }
     }
 	
+	//정규식
 	public boolean solution2(String s) {
 		return s.matches("^[0-9]{4}|{6}$");
 	}
