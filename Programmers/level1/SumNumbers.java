@@ -1,27 +1,20 @@
 package level1;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class SumNumbers {
 	public int[] solution(int[] numbers) {
-        ArrayList<Integer> answer = new ArrayList<Integer>();
-        int sum = 0;
+		Set<Integer> set = new TreeSet<>();
         
         for(int i=0; i < numbers.length; i++){
-            for(int j=0; j<numbers.length; j++){
-                if(i == j)
-                    continue;
-                
-                sum = numbers[i] + numbers[j];
-                if(!answer.contains(sum)){
-                    answer.add(sum);
-                }
+            for(int j=i+1; j<numbers.length; j++){
+                set.add(numbers[i] + numbers[j]);
             }
         }
         
-        Collections.sort(answer);
+        int[] arr = set.stream().mapToInt(Integer::intValue).toArray();
+        Arrays.sort(arr);
         
-        return answer.stream().mapToInt(Integer::intValue).toArray();
+        return arr;
     }
 }
