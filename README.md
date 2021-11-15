@@ -6,7 +6,8 @@
 * [Baekjoon](https://www.acmicpc.net/)
 
 
-## 문제 유형
+
+### 문제 유형
 * 입출력
 * DP
 * 정렬
@@ -21,7 +22,8 @@
 * 탐욕(Greedy)
 * 완전탐색
 
-## 자료 구조
+
+### 자료 구조
 * Stack
 * Queue
 * Deque
