@@ -14,6 +14,8 @@ public class Ex_10430 {
 		System.out.println(((a % c) + (b % c)) % c);
 		System.out.println((a * b) % c);
 		System.out.println(((a % c) * (b % c)) % c);
+		
+		sc.close();
 	}
 
 }
