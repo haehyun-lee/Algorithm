@@ -4,7 +4,6 @@ public class DP_Fibonacci {
 		Solution s = new Solution();
 		System.out.println(s.fibBottomUp(5));
 		System.out.println(s.fibBottomUp(35));
-		System.out.println(s.fibTopDown(5));
 		System.out.println(s.fibBottomUp(35));
 	}	
 }
@@ -34,24 +33,6 @@ class Solution {
 		}
 		
 		return sum;
-	}
-	
-	// DP Top-Down 방식
-	int[] memo;		//Top-Down 메모 배열
-	public int fibTopDown(int n) {
-		if(n <= 1)
-			return n;
-		
-		memo = new int[n+1];
-		
-		if(memo[n] != 0) {
-			return memo[n];
-		}
-		else {
-			memo[n] = fibTopDown(n-1) + fibTopDown(n-2);
-		}
-		
-		return memo[n];
 	}
 	
 	// DP Bottom-Up 방식
