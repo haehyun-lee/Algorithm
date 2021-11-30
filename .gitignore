@@ -1,4 +1,6 @@
+/bin/
+.settings/
 .classpath
 .project
-.settings/
-bin/
+.idea/
+Algorithm.iml
