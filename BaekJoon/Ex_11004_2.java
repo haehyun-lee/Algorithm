@@ -22,23 +22,24 @@ public class Ex_11004_2 {
             nums[i] = Integer.parseInt(st.nextToken());
         }
 
-        quicksort(nums, 0, N - 1);
+        quicksort(nums, 0, N-1);        // 배열 오름차순 퀵정렬
 
         System.out.println(nums[K-1]);
     }
 
     public static void quicksort(int[] array, int left, int right) {
         if (left >= right) {
-            return;     // 정렬 끝
+            return;
         }
 
-        int pi = partition(array, left, right);
-        // K번째 수의 위치는 K-1
-        if(pi+1 == K) {
+        int pi = partition(array, left, right);     // pivot
+        
+        // K번째 수 위치를 반환하거나, 정렬 범위 축소
+        if(pi+1 == K) {                             // K번째 수를 기준으로 작은 수, 큰 수가 분할됨
             return;
-        } else if (pi+1 < K) {
+        } else if (pi+1 < K) {                      // pivot 보다 큰 수 영역에 K번째 수가 존재 => pivot 기준 오른쪽 수들에 정렬 필요
             quicksort(array, pi+1, right);
-        }else{
+        }else{                                      // pivot 보다 작은 수 영역에 K번째 수가 존재 => pivot 기준 왼쪽 수들에 정렬 필요
             quicksort(array, left, pi-1);
         }
     }
