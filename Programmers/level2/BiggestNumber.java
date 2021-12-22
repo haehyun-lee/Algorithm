@@ -3,7 +3,7 @@ package level2;
 import java.util.Arrays;
 import java.util.Comparator;
 
-// 가장 큰 수
+// 가장 큰 수 (정렬)
 class Solution {
     public String solution(int[] numbers) {
         String[] strNumbers = new String[numbers.length];
