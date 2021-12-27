@@ -48,9 +48,9 @@ public class BridgeTruck {
 
     public static void main(String[] args) {
         int bridge_length = 100;
-        int weigth = 100;
+        int weight = 100;
         int[] truck_weights = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
 
-        System.out.println(solution(bridge_length, weigth, truck_weights));
+        System.out.println(solution(bridge_length, weight, truck_weights));
     }
 }
