@@ -19,13 +19,10 @@ public class Ex_10250 {
             w = Integer.parseInt(st.nextToken());   // 각 층의 방 수
             n = Integer.parseInt(st.nextToken());   // 몇 번째 손님
 
-            // 방 알아내기 (?XX)
-            for (int i = 1; i <= w; i++) {
-                if (n <= i * h) {
-                    // 층 알아내기 (YXX)
-                    sb.append((h - (i * h - n)) + String.format("%02d", i) + "\n");
-                    break;
-                }
+            if (n % h == 0) {   // 최상층 딱 떨어짐
+                sb.append((h * 100) + (n / h) + "\n");
+            } else {            // 다음 방으로 넘어감
+                sb.append((n % h * 100) + (n / h + 1) + "\n");
             }
         }
         System.out.print(sb);
