@@ -16,6 +16,7 @@ public class Ex_11651 {
             pos[i][1] = Integer.parseInt(dot[1]);       // y좌표
         }
 
+        // 1. y좌표 오름차순 정렬, 2. x좌표 오름차순 정렬
         Arrays.sort(pos, (o1, o2) -> {
             if (o1[1] == o2[1]) {
                 return o1[0] - o2[0];
