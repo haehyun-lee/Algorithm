@@ -11,7 +11,7 @@ public class Ex_10825 {
         StringTokenizer st;
 
         int N = Integer.parseInt(br.readLine());
-        Student[] students = new Student[N];
+        Student2[] student2s = new Student2[N];
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine(), " ");
@@ -21,24 +21,24 @@ public class Ex_10825 {
             int eng = Integer.parseInt(st.nextToken());
             int math = Integer.parseInt(st.nextToken());
 
-            students[i] = new Student(name, kor, eng, math);
+            student2s[i] = new Student2(name, kor, eng, math);
         }
 
-        Arrays.sort(students);
+        Arrays.sort(student2s);
 
-        for (Student std : students) {
+        for (Student2 std : student2s) {
             System.out.println(std);
         }
     }
 }
 
-class Student implements Comparable {
+class Student2 implements Comparable {
     String name;
     int kor;
     int eng;
     int math;
 
-    Student(String name, int kor, int eng, int math) {
+    Student2(String name, int kor, int eng, int math) {
         this.name = name;
         this.kor = kor;
         this.eng = eng;
@@ -52,8 +52,8 @@ class Student implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        if (o instanceof Student) {
-            Student std = (Student)o;
+        if (o instanceof Student2) {
+            Student2 std = (Student2)o;
             if (this.kor == std.kor) {
                 if (this.eng == std.eng) {
                     if (this.math == std.math) {
