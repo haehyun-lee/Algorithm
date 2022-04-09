@@ -2,7 +2,7 @@ public class Fibonacci {
     // 한 번 계산된 결과를 메모이제이션 하기 위한 배열 초기화
     public static long[] d = new long[100];
 
-    private static long fibo(int x) {
+    private static long fiboRecursive(int x) {
         // 종료 조건
         if (x == 1 || x == 2){
             return 1;
@@ -13,11 +13,23 @@ public class Fibonacci {
             return d[x];
         }
 
-        d[x] = fibo(x - 1) + fibo(x - 2);
+        d[x] = fiboRecursive(x - 1) + fiboRecursive(x - 2);
+        return d[x];
+    }
+
+    private static long fiboLoop(int x) {
+        d[1] = 1;
+        d[2] = 1;
+
+        for (int i = 3; i <= x; i++) {
+            d[i] = d[i - 1] + d[i + 1];
+        }
+
         return d[x];
     }
 
     public static void main(String[] args) {
-        System.out.println(fibo(50));
+        System.out.println(fiboRecursive(50));
+        System.out.println(fiboLoop(50));
     }
 }
